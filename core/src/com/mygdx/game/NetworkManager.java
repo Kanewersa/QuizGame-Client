@@ -7,14 +7,11 @@ public class NetworkManager extends Thread {
     public static NetworkManager instance;
     Socket socket;
 
-    // Sends data to server
     private OutputStream output;
     private PrintWriter writer;
 
-    // Reads data from server
     private InputStream input;
     private BufferedReader reader;
-    // Determines if network manager has connected to the server
     boolean connected;
     private String status;
     boolean isHost = false;
@@ -32,7 +29,6 @@ public class NetworkManager extends Thread {
         connected = connect(server, port);
     }
 
-    // Creates the connection to the target server
     private boolean connect(String serverAddress, int port) {
         changeStatus("CONNECTING");
         try {
@@ -58,12 +54,10 @@ public class NetworkManager extends Thread {
         return true;
     }
 
-    // Sends given text to the server
     public void sendText(String text) {
         writer.println(text);
     }
 
-    // Reads text from the server
     public String readText() {
         try {
             return reader.readLine();

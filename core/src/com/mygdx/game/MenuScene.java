@@ -34,9 +34,7 @@ public class MenuScene extends BaseScene {
         menuTable.addListener(new InputListener(){
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-
                 return true;
-                //return super.touchDown(event, x, y, pointer, button);
             }
         });
 
